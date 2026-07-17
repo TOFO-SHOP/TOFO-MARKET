@@ -9,9 +9,10 @@
 .tf-container {
 
     width: 100%;
-    max-width: var(--container);
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 0 var(--space-4);
+    padding: 0 20px;
+    box-sizing: border-box;
 
 }
 
