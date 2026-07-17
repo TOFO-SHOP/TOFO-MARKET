@@ -209,7 +209,9 @@ function renderProducts(products) {
 
             <div class="tf-product-card__body">
 
-
+<h3>
+    TEST - ${product.name}
+</h3>
 
 
 
