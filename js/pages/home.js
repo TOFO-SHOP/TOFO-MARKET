@@ -1,11 +1,13 @@
 /* ======================================================
    TOFO MARKET - HOME PAGE LOGIC
-   Version: 1.0
+   Version: 1.1
 
    Handles:
    - Product loading
    - Product rendering
-   - Data connection
+   - Rating display
+   - Seller information
+   - Future API connection ready
 ====================================================== */
 
 
@@ -25,8 +27,7 @@ document.addEventListener(
 function loadProducts() {
 
 
-    const productGrid =
-        "product-grid";
+    const productGrid = "product-grid";
 
 
     try {
@@ -46,11 +47,14 @@ function loadProducts() {
 
 
 
+
         setTimeout(function () {
+
 
 
             const products =
                 window.ToFoProducts || [];
+
 
 
 
@@ -59,15 +63,18 @@ function loadProducts() {
 
                 if (window.ToFoError) {
 
+
                     ToFoError.show(
                         productGrid,
                         "No products available."
                     );
 
+
                 }
 
 
                 return;
+
 
             }
 
@@ -80,15 +87,16 @@ function loadProducts() {
 
 
 
-        },500);
+
+        }, 500);
 
 
 
 
 
-    }
 
-    catch(error) {
+    } catch(error) {
+
 
 
         console.error(
@@ -100,18 +108,22 @@ function loadProducts() {
 
         if(window.ToFoError){
 
+
             ToFoError.show(
                 productGrid,
                 error.message
             );
 
+
         }
+
 
 
     }
 
 
 }
+
 
 
 
@@ -149,10 +161,13 @@ function renderProducts(products) {
 
 
 
+
     if(count){
+
 
         count.innerHTML =
         `${products.length} Products`;
+
 
     }
 
@@ -167,6 +182,8 @@ function renderProducts(products) {
 
 
 
+
+
     products.forEach(function(product){
 
 
@@ -174,7 +191,9 @@ function renderProducts(products) {
         const card = `
 
 
+
         <div class="tf-product-card">
+
 
 
             <img 
@@ -185,7 +204,13 @@ function renderProducts(products) {
 
 
 
+
+
+
             <div class="tf-product-card__body">
+
+
+
 
 
                 <h3>
@@ -193,6 +218,8 @@ function renderProducts(products) {
                     ${product.name}
 
                 </h3>
+
+
 
 
 
@@ -205,21 +232,81 @@ function renderProducts(products) {
 
 
 
-                <strong>
 
-                    ${product.price}
+                <div class="tf-rating">
+
+
+                    ⭐ ${product.productRating.stars}
+
+
+                    <span>
+
+                    (${product.productRating.reviews} reviews)
+
+                    </span>
+
+
+                </div>
+
+
+
+
+
+
+                <strong class="tf-price">
+
+
+                    ${product.price.toLocaleString()}
+
                     ${product.currency}
+
 
                 </strong>
 
 
 
 
-                <span>
+
+
+
+                <span class="tf-location">
+
 
                     📍 ${product.location}
 
+
                 </span>
+
+
+
+
+
+
+
+                <div class="tf-seller">
+
+
+
+                    ${product.seller.verified ? "✅" : ""}
+
+
+                    ${product.seller.name}
+
+
+
+                    <small>
+
+                    (${product.seller.rating}% Seller)
+
+                    </small>
+
+
+
+                </div>
+
+
+
+
 
 
 
@@ -227,19 +314,30 @@ function renderProducts(products) {
                 <button 
                 class="tf-btn tf-btn--primary">
 
+
                     View Product
 
+
                 </button>
+
+
+
 
 
 
             </div>
 
 
+
+
         </div>
 
 
+
+
+
         `;
+
 
 
 
@@ -252,4 +350,5 @@ function renderProducts(products) {
 
 
 
-              }
+
+               }
