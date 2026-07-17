@@ -1,10 +1,17 @@
 <svg width="300" height="100" viewBox="0 0 300 100" fill="none" xmlns="http://www.w3.org/2000/svg">
 
-<rect width="300" height="100" rx="20" fill="#111827"/>
+<!-- White background -->
+<rect width="300" height="100" rx="20" fill="white"/>
 
+
+<!-- Logo Circle -->
 <circle cx="55" cy="50" r="30" fill="#2563EB"/>
 
-<text x="55" y="60"
+
+<!-- T Letter -->
+<text 
+x="55" 
+y="60"
 text-anchor="middle"
 font-size="28"
 font-weight="800"
@@ -14,22 +21,34 @@ T
 </text>
 
 
-<text x="100" y="60"
+
+<!-- Brand Name -->
+<text 
+x="100" 
+y="60"
 font-size="35"
 font-weight="800"
-fill="white"
+fill="#111827"
 font-family="Arial">
 ToFo
 </text>
 
 
+
+<!-- Verified Dot -->
 <circle cx="220" cy="45" r="6" fill="#22C55E"/>
 
-<text x="235" y="52"
+
+
+<!-- Market Text -->
+<text 
+x="235" 
+y="52"
 font-size="12"
-fill="#D1D5DB"
+fill="#6B7280"
 font-family="Arial">
 MARKET
 </text>
+
 
 </svg>
