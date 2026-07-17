@@ -336,12 +336,23 @@
 
     .tf-category-bar {
 
-        overflow-x: auto;
-        justify-content: flex-start;
-        gap: 20px;
-        padding: 12px 15px;
+    width: 100%;
+    overflow-x: auto;
+    justify-content: flex-start;
+    gap: 16px;
+    padding: 12px 15px;
+    box-sizing: border-box;
 
-    }
+}
+
+
+.tf-category-bar a {
+
+    flex-shrink: 0;
+    white-space: nowrap;
+    font-size: 14px;
+
+}
 
 
 
