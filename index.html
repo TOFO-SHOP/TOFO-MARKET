@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ur" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tofo — Karachi &amp; Lahore ka Apna Marketplace</title>
+  <meta name="description" content="Tofo par apne shehar ke verified sellers se kharidari karein — fast, local, bharosemand." />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ===== Header ===== -->
+  <header class="tf-header">
+    <div class="tf-header__bar">
+      <div class="tf-logo">Tofo<span class="tf-logo__dot"></span></div>
+      <span class="tf-header__tagline">Karachi ⟷ Lahore Marketplace</span>
+      <div class="tf-city-toggle" role="group" aria-label="Shehar filter">
+        <button data-city="All" class="is-active">Sab</button>
+        <button data-city="Karachi">KHI</button>
+        <button data-city="Lahore">LHE</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== Hero ===== -->
+  <section class="tf-hero">
+    <div class="tf-container tf-hero__grid">
+      <div>
+        <div class="tf-hero__eyebrow">Sirf Karachi &amp; Lahore ke liye</div>
+        <h1>Apne shehar se, <em>apne waqt</em> par.</h1>
+        <p>Tofo par har seller ki location saaf dikhti hai — isliye pata hota hai cheez kitni jaldi pohnchegi. Branch pickup par khol kar check bhi kar sakte hain.</p>
+        <div class="tf-hero__actions">
+          <button class="tf-btn tf-btn--primary">Kharidari Shuru Karein</button>
+          <button class="tf-btn tf-btn--ghost">Seller Ban Jayein</button>
+        </div>
+      </div>
+      <div class="tf-postmark" aria-hidden="true">
+        <div class="tf-postmark__inner">
+          <div class="code">KHI⟷LHE</div>
+          <div class="label">Verified Local</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Products ===== -->
+  <section class="tf-section">
+    <div class="tf-container">
+      <div class="tf-section__head">
+        <h2>Naye Items</h2>
+        <span class="tf-section__count" id="product-count">Loading...</span>
+      </div>
+      <div class="tf-grid" id="product-grid">
+        <!-- JS yahan products inject karega (loading -> real cards / error) -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer class="tf-footer">
+    <div class="tf-container tf-footer__row">
+      <div><strong>Tofo</strong> — Karachi &amp; Lahore ka apna marketplace</div>
+      <div>&copy; 2026 Tofo. Sab huqooq mahfooz.</div>
+    </div>
+  </footer>
+
+  <!-- ===== Scripts (order matters: components + data before page logic) ===== -->
+  <script src="js/components/loading.js"></script>
+  <script src="js/components/error.js"></script>
+  <script src="js/data/products.js"></script>
+  <script src="js/pages/home.js"></script>
+</body>
+</html>
