@@ -283,3 +283,73 @@
 
 
    }
+
+/* ======================================================
+   TOFO MARKET - HEADER RESPONSIVE UPDATE
+====================================================== */
+
+
+@media (max-width: 768px) {
+
+
+    .tf-header__main {
+
+        flex-direction: column;
+        gap: 15px;
+
+    }
+
+
+    .tf-logo img {
+
+        width: 130px;
+
+    }
+
+
+
+    .tf-search {
+
+        width: 100%;
+        max-width: 100%;
+
+    }
+
+
+
+    .tf-header__actions {
+
+        width: 100%;
+        justify-content: center;
+
+    }
+
+
+
+    .tf-header__actions button {
+
+        flex: 1;
+
+    }
+
+
+
+    .tf-category-bar {
+
+        overflow-x: auto;
+        justify-content: flex-start;
+        gap: 20px;
+        padding: 12px 15px;
+
+    }
+
+
+
+    .tf-category-bar a {
+
+        white-space: nowrap;
+
+    }
+
+
+       }
