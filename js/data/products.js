@@ -1,10 +1,10 @@
 /* ======================================================
    TOFO MARKET - PRODUCTS DATA
-   Version: 1.0
+   Version: 1.1
 
    NOTE:
-   This is temporary dummy data.
-   Later API data will replace this file.
+   Temporary dummy data.
+   Later API response will replace this structure.
 ====================================================== */
 
 
@@ -25,9 +25,23 @@ const ToFoProducts = [
 
         location: "Karachi",
 
-        seller: "Tech Store",
 
-        rating: 4.5,
+        // Seller Information
+
+        seller: {
+            name: "Tech Store",
+            rating: 98,
+            verified: true
+        },
+
+
+        // Product Rating
+
+        productRating: {
+            stars: 4.5,
+            reviews: 234
+        },
+
 
         stock: true
 
@@ -49,9 +63,19 @@ const ToFoProducts = [
 
         location: "Lahore",
 
-        seller: "Digital Hub",
 
-        rating: 4.2,
+        seller: {
+            name: "Digital Hub",
+            rating: 96,
+            verified: true
+        },
+
+
+        productRating: {
+            stars: 4.2,
+            reviews: 180
+        },
+
 
         stock: true
 
@@ -73,9 +97,19 @@ const ToFoProducts = [
 
         location: "Karachi",
 
-        seller: "Fashion Point",
 
-        rating: 4.7,
+        seller: {
+            name: "Fashion Point",
+            rating: 99,
+            verified: true
+        },
+
+
+        productRating: {
+            stars: 4.7,
+            reviews: 560
+        },
+
 
         stock: true
 
@@ -97,9 +131,19 @@ const ToFoProducts = [
 
         location: "Lahore",
 
-        seller: "Computer Zone",
 
-        rating: 4.8,
+        seller: {
+            name: "Computer Zone",
+            rating: 97,
+            verified: true
+        },
+
+
+        productRating: {
+            stars: 4.8,
+            reviews: 890
+        },
+
 
         stock: true
 
