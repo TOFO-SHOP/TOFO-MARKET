@@ -450,3 +450,141 @@
     }
 
    }
+
+/* ======================================================
+   TOFO MARKET - HEADER UPDATE
+====================================================== */
+
+
+/* Main Header */
+
+.tf-header {
+    background: var(--secondary);
+    color: white;
+}
+
+
+
+/* Header Main Row */
+
+.tf-header__main {
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 15px 0;
+
+}
+
+
+
+/* Logo Image */
+
+.tf-logo img {
+
+    width: 150px;
+    height: auto;
+    display: block;
+
+}
+
+
+
+/* Search Bar */
+
+.tf-search {
+
+    flex: 1;
+    max-width: 600px;
+    display: flex;
+    background: white;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+
+}
+
+
+
+.tf-search input {
+
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 14px 18px;
+    font-size: 15px;
+
+}
+
+
+
+.tf-search button {
+
+    width: 55px;
+    border: none;
+    background: var(--primary);
+    color: white;
+    cursor: pointer;
+    font-size: 18px;
+
+}
+
+
+
+
+/* Header Buttons */
+
+.tf-header__actions {
+
+    display: flex;
+    gap: 10px;
+
+}
+
+
+
+.tf-header__actions button {
+
+    background: transparent;
+    color: white;
+    border: 1px solid rgba(255,255,255,0.3);
+    padding: 10px 14px;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+
+}
+
+
+
+
+/* Category Bar */
+
+.tf-category-bar {
+
+    background: white;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 12px;
+    border-bottom: 1px solid #eee;
+
+}
+
+
+
+.tf-category-bar a {
+
+    text-decoration: none;
+    color: var(--secondary);
+    font-weight: 600;
+    font-size: 14px;
+
+}
+
+
+
+.tf-category-bar a:hover {
+
+    color: var(--primary);
+
+       }
