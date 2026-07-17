@@ -1,0 +1,110 @@
+/* ======================================================
+   TOFO MARKET - GLOBAL THEME
+   Version: 1.0
+====================================================== */
+
+:root{
+
+/* Brand Colors */
+
+--primary:#FF9900;
+--primary-hover:#E68A00;
+
+--secondary:#232F3E;
+--secondary-light:#37475A;
+
+--success:#28A745;
+--danger:#DC3545;
+--warning:#FFC107;
+--info:#17A2B8;
+
+/* Background */
+
+--bg:#F5F5F5;
+--surface:#FFFFFF;
+--card:#FFFFFF;
+
+/* Text */
+
+--text:#111111;
+--text-light:#666666;
+--text-white:#FFFFFF;
+
+/* Border */
+
+--border:#DDDDDD;
+
+/* Radius */
+
+--radius-xs:4px;
+--radius-sm:8px;
+--radius-md:12px;
+--radius-lg:18px;
+--radius-xl:25px;
+
+/* Shadow */
+
+--shadow-sm:0 2px 6px rgba(0,0,0,.08);
+--shadow-md:0 6px 15px rgba(0,0,0,.12);
+--shadow-lg:0 12px 30px rgba(0,0,0,.18);
+
+/* Typography */
+
+--font-family:
+"Inter",
+"Segoe UI",
+Roboto,
+Arial,
+sans-serif;
+
+--font-xs:12px;
+--font-sm:14px;
+--font-md:16px;
+--font-lg:20px;
+--font-xl:28px;
+--font-xxl:36px;
+
+/* Layout */
+
+--container:1400px;
+
+--space-1:4px;
+--space-2:8px;
+--space-3:12px;
+--space-4:16px;
+--space-5:20px;
+--space-6:24px;
+--space-7:32px;
+--space-8:48px;
+
+/* Transition */
+
+--transition:0.25s ease;
+
+}
+
+/* Reset */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+
+font-family:var(--font-family);
+
+background:var(--bg);
+
+color:var(--text);
+
+font-size:var(--font-md);
+
+line-height:1.6;
+
+  }
