@@ -717,3 +717,33 @@
     color: var(--text-light);
     margin-bottom: 6px;
    }
+
+/* ================= BASE BUTTONS (Missing — Re-added) ================= */
+
+.tf-btn {
+    padding: 12px 25px;
+    border-radius: var(--radius-md);
+    border: none;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 14px;
+    text-align: center;
+    transition: var(--transition);
+    display: inline-block;
+    text-decoration: none;
+}
+
+.tf-btn--primary {
+    background: var(--primary);
+    color: white !important;
+}
+
+.tf-btn--primary:hover {
+    background: var(--primary-hover);
+}
+
+.tf-btn--ghost {
+    background: transparent;
+    border: 2px solid var(--secondary);
+    color: var(--secondary) !important;
+}
