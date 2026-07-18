@@ -1,366 +1,199 @@
 /* ======================================================
    TOFO MARKET - RESPONSIVE DESIGN
-   Version: 1.0
+   Version: 1.1 (Amazon-style layout)
 ====================================================== */
-
 
 /* ================= TABLET ================= */
 
 @media (max-width: 992px) {
 
-
-    .tf-header__bar {
-
+    .tf-header__main {
         flex-wrap: wrap;
-
         justify-content: center;
-
-        text-align:center;
-
+        text-align: center;
     }
-
-
 
     .tf-hero__grid {
-
         grid-template-columns: 1fr;
-
-        text-align:center;
-
+        text-align: center;
     }
-
-
 
     .tf-hero__actions {
-
-        justify-content:center;
-
+        justify-content: center;
     }
-
-
 
     .tf-postmark__inner {
-
-        width:220px;
-
-        height:220px;
-
+        width: 220px;
+        height: 220px;
     }
-
-
 
     .tf-footer__row {
-
-        flex-direction:column;
-
-        text-align:center;
-
+        flex-direction: column;
+        text-align: center;
     }
 
+    .tf-tile-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
 
 }
-
-
-
 
 
 /* ================= MOBILE ================= */
 
-
 @media (max-width: 768px) {
 
-
     .tf-container {
-
-        padding:0 15px;
-
+        padding: 0 15px;
     }
 
-
-
-    .tf-header__bar {
-
-        flex-direction:column;
-
-        gap:15px;
-
+    /* Header row 1 */
+    .tf-header__main {
+        flex-direction: column;
+        gap: 15px;
     }
 
-
-
-    .tf-logo {
-
-        font-size:24px;
-
+    .tf-logo img {
+        width: 130px;
     }
 
-
-
-    .tf-header__tagline {
-
-        font-size:13px;
-
+    .tf-deliver {
+        align-items: center;
     }
 
-
-
-    .tf-city-toggle {
-
-        justify-content:center;
-
-        width:100%;
-
+    .tf-search {
+        width: 100%;
+        max-width: 100%;
     }
 
-
-
-    .tf-city-toggle button {
-
-        flex:1;
-
+    .tf-header__actions {
+        width: 100%;
+        justify-content: center;
     }
 
+    .tf-header__action {
+        flex: 1;
+        align-items: center;
+    }
 
+    /* Category bar row 2 — horizontal scroll on mobile */
+    .tf-category-bar__row {
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px 15px;
+    }
 
+    .tf-category-bar__links {
+        width: 100%;
+        overflow-x: auto;
+        justify-content: flex-start;
+        gap: 14px;
+        flex-wrap: nowrap;
+        padding-bottom: 4px;
+    }
 
+    .tf-category-bar__links a,
+    .tf-city-toggle-btn {
+        flex-shrink: 0;
+        white-space: nowrap;
+        font-size: 14px;
+    }
 
+    .tf-category-bar__divider {
+        display: none;
+    }
+
+    .tf-menu-toggle {
+        align-self: flex-end;
+    }
+
+    /* Hero */
     .tf-hero {
-
-        padding:40px 0;
-
+        padding: 40px 0;
     }
-
-
 
     .tf-hero h1 {
-
-        font-size:28px;
-
+        font-size: 28px;
     }
-
-
 
     .tf-hero p {
-
-        font-size:14px;
-
+        font-size: 14px;
     }
-
-
 
     .tf-hero__actions {
-
-        flex-direction:column;
-
-        width:100%;
-
+        flex-direction: column;
+        width: 100%;
     }
-
-
 
     .tf-btn {
-
-        width:100%;
-
+        width: 100%;
     }
-
-
-
-
 
     .tf-postmark__inner {
-
-        width:180px;
-
-        height:180px;
-
+        width: 180px;
+        height: 180px;
     }
-
-
 
     .tf-postmark .code {
-
-        font-size:30px;
-
+        font-size: 30px;
     }
 
+    /* Category tiles */
+    .tf-tile-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
 
+    .tf-tile img {
+        height: 100px;
+    }
 
-
-
+    /* Product section */
     .tf-section {
-
-        padding:35px 0;
-
+        padding: 35px 0;
     }
-
-
 
     .tf-section__head {
-
-        flex-direction:column;
-
-        gap:10px;
-
-        text-align:center;
-
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
     }
-
-
 
     .tf-grid {
-
-        grid-template-columns:1fr;
-
-        gap:20px;
-
+        grid-template-columns: 1fr;
+        gap: 20px;
     }
-
-
 
     .tf-product-card__image {
-
-        height:200px;
-
+        height: 200px;
     }
 
-
-
 }
-
-
-
-
 
 
 /* ================= SMALL PHONES ================= */
 
-
 @media (max-width: 480px) {
 
-
-
     .tf-hero h1 {
-
-        font-size:24px;
-
+        font-size: 24px;
     }
-
-
 
     .tf-postmark__inner {
-
-        width:150px;
-
-        height:150px;
-
+        width: 150px;
+        height: 150px;
     }
-
-
 
     .tf-postmark .code {
-
-        font-size:24px;
-
+        font-size: 24px;
     }
 
-
-
-    .tf-city-toggle {
-
-        flex-direction:column;
-
+    .tf-tile-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 
-
-
-    .tf-city-toggle button {
-
-        width:100%;
-
+    .tf-header__action-label {
+        display: none;
     }
 
-
-
-   }
-
-/* ======================================================
-   TOFO MARKET - HEADER RESPONSIVE UPDATE
-====================================================== */
-
-
-@media (max-width: 768px) {
-
-
-    .tf-header__main {
-
-        flex-direction: column;
-        gap: 15px;
-
-    }
-
-
-    .tf-logo img {
-
-        width: 130px;
-
-    }
-
-
-
-    .tf-search {
-
-        width: 100%;
-        max-width: 100%;
-
-    }
-
-
-
-    .tf-header__actions {
-
-        width: 100%;
-        justify-content: center;
-
-    }
-
-
-
-    .tf-header__actions button {
-
-        flex: 1;
-
-    }
-
-
-
-    .tf-category-bar {
-
-    width: 100%;
-    overflow-x: auto;
-    justify-content: flex-start;
-    gap: 16px;
-    padding: 12px 15px;
-    box-sizing: border-box;
-
-}
-
-
-.tf-category-bar a {
-
-    flex-shrink: 0;
-    white-space: nowrap;
-    font-size: 14px;
-
-}
-
-
-
-    .tf-category-bar a {
-
-        white-space: nowrap;
-
-    }
-
-
-       }
+           }
