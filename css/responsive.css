@@ -1,199 +1,64 @@
 /* ======================================================
-   TOFO MARKET - RESPONSIVE DESIGN
-   Version: 1.1 (Amazon-style layout)
+   TOFO MARKET - RESPONSIVE (Amazon-style rebuild)
+   Version: 2.0
 ====================================================== */
 
-/* ================= TABLET ================= */
+/* ================= TABLET+ ================= */
 
-@media (max-width: 992px) {
+@media (min-width: 640px) {
 
-    .tf-header__main {
-        flex-wrap: wrap;
-        justify-content: center;
-        text-align: center;
-    }
-
-    .tf-hero__grid {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
-
-    .tf-hero__actions {
-        justify-content: center;
-    }
-
-    .tf-postmark__inner {
-        width: 220px;
-        height: 220px;
-    }
-
-    .tf-footer__row {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .tf-tile-grid {
+    .tf-grid {
         grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
     }
 
+    .tf-imggrid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .tf-promo__card {
+        flex: 0 0 380px;
+    }
+
+    .tf-product-card__body h3 {
+        font-size: 14px;
+    }
+
+    .tf-price {
+        font-size: 17px;
+    }
 }
 
+@media (min-width: 960px) {
 
-/* ================= MOBILE ================= */
-
-@media (max-width: 768px) {
-
-    .tf-container {
-        padding: 0 15px;
+    .tf-grid {
+        grid-template-columns: repeat(4, 1fr);
     }
 
-    /* Header row 1 */
-    .tf-header__main {
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    .tf-logo img {
-        width: 130px;
-    }
-
-    .tf-deliver {
-        align-items: center;
+    .tf-header__top {
+        padding: 14px 24px;
     }
 
     .tf-search {
-        width: 100%;
-        max-width: 100%;
+        max-width: 700px;
+        margin: 0 auto 10px;
     }
-
-    .tf-header__actions {
-        width: 100%;
-        justify-content: center;
-    }
-
-    .tf-header__action {
-        flex: 1;
-        align-items: center;
-    }
-
-    /* Category bar row 2 — horizontal scroll on mobile */
-    .tf-category-bar__row {
-        flex-direction: column;
-        gap: 10px;
-        padding: 10px 15px;
-    }
-
-    .tf-category-bar__links {
-        width: 100%;
-        overflow-x: auto;
-        justify-content: flex-start;
-        gap: 14px;
-        flex-wrap: nowrap;
-        padding-bottom: 4px;
-    }
-
-    .tf-category-bar__links a,
-    .tf-city-toggle-btn {
-        flex-shrink: 0;
-        white-space: nowrap;
-        font-size: 14px;
-    }
-
-    .tf-category-bar__divider {
-        display: none;
-    }
-
-    .tf-menu-toggle {
-        align-self: flex-end;
-    }
-
-    /* Hero */
-    .tf-hero {
-        padding: 40px 0;
-    }
-
-    .tf-hero h1 {
-        font-size: 28px;
-    }
-
-    .tf-hero p {
-        font-size: 14px;
-    }
-
-    .tf-hero__actions {
-        flex-direction: column;
-        width: 100%;
-    }
-
-    .tf-btn {
-        width: 100%;
-    }
-
-    .tf-postmark__inner {
-        width: 180px;
-        height: 180px;
-    }
-
-    .tf-postmark .code {
-        font-size: 30px;
-    }
-
-    /* Category tiles */
-    .tf-tile-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 15px;
-    }
-
-    .tf-tile img {
-        height: 100px;
-    }
-
-    /* Product section */
-    .tf-section {
-        padding: 35px 0;
-    }
-
-    .tf-section__head {
-        flex-direction: column;
-        gap: 10px;
-        text-align: center;
-    }
-
-    .tf-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-
-    .tf-product-card__image {
-        height: 200px;
-    }
-
 }
-
 
 /* ================= SMALL PHONES ================= */
 
-@media (max-width: 480px) {
+@media (max-width: 380px) {
 
-    .tf-hero h1 {
-        font-size: 24px;
+    .tf-promo__card {
+        flex: 0 0 88%;
     }
 
-    .tf-postmark__inner {
-        width: 150px;
-        height: 150px;
+    .tf-product-card__body h3 {
+        font-size: 11.5px;
+        min-height: 28px;
     }
 
-    .tf-postmark .code {
-        font-size: 24px;
+    .tf-price {
+        font-size: 13.5px;
     }
-
-    .tf-tile-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .tf-header__action-label {
-        display: none;
-    }
-
-           }
+}
