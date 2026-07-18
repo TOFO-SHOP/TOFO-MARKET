@@ -1,12 +1,11 @@
 /* ======================================================
    TOFO MARKET - HOME PAGE LOGIC
-   Version: 1.2
+   Version: 1.3
 
    Handles:
    - Product loading
-   - Product rendering
+   - Product rendering (ratings removed from landing page)
    - City filtering (drawer se connected)
-   - Rating display
    - Seller information
    - Future API connection ready
 ====================================================== */
@@ -127,11 +126,6 @@ function renderProducts(products) {
 
                 <p>${product.category}</p>
 
-                <div class="tf-rating">
-                    ⭐ ${product.productRating.stars}
-                    <span>(${product.productRating.reviews} reviews)</span>
-                </div>
-
                 <strong class="tf-price">
                     ${product.price.toLocaleString()} ${product.currency}
                 </strong>
@@ -159,4 +153,4 @@ function renderProducts(products) {
 
     });
 
-               }
+}
