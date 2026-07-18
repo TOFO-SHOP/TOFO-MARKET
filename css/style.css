@@ -952,68 +952,162 @@
     margin-bottom: 24px;
    }
 
-/* ================= AUTH PAGE ================= */
+/* ================= AUTH PAGE (Amazon-style exact layout) ================= */
 
-.tf-auth {
-    max-width: 400px;
-    padding-top: 30px;
-    padding-bottom: 40px;
+.tf-auth-body {
+    background: var(--bg);
 }
 
-.tf-auth__tabs {
+.tf-auth-page {
+    max-width: 350px;
+    margin: 0 auto;
+    padding: 30px 20px 20px;
     display: flex;
-    border-bottom: 1px solid var(--border);
+    flex-direction: column;
+    align-items: center;
+}
+
+.tf-auth-logo {
     margin-bottom: 20px;
 }
 
-.tf-auth__tab {
-    flex: 1;
-    background: transparent;
-    border: none;
-    padding: 12px;
-    font-weight: 700;
-    font-size: 15px;
-    color: var(--text-light);
-    cursor: pointer;
-    border-bottom: 2px solid transparent;
+.tf-auth-logo img {
+    width: 130px;
 }
 
-.tf-auth__tab.is-active {
-    color: var(--primary);
-    border-bottom-color: var(--primary);
-}
-
-.tf-auth__form {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-}
-
-.tf-auth__form label {
-    font-size: 13px;
-    font-weight: 600;
-    margin-top: 10px;
-}
-
-.tf-auth__form input {
-    padding: 11px 12px;
-    border: 1.5px solid var(--border);
+.tf-auth-card {
+    width: 100%;
+    background: white;
+    border: 1px solid #ddd;
     border-radius: var(--radius-sm);
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.tf-auth-card h1 {
+    font-size: 22px;
+    font-weight: 500;
+    margin-bottom: 14px;
+}
+
+.tf-auth-card label {
+    display: block;
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.tf-auth-card input {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid #a6a6a6;
+    border-radius: 3px;
+    font-size: 15px;
+    margin-bottom: 14px;
+    box-sizing: border-box;
+}
+
+.tf-auth-hint {
+    font-size: 12px;
+    color: var(--text-light);
+    margin-top: -10px;
+    margin-bottom: 14px;
+}
+
+.tf-btn--signin {
+    width: 100%;
+    background: var(--warning);
+    color: var(--text);
+    border-radius: var(--radius-xs);
+    padding: 9px;
     font-size: 14px;
+    font-weight: 400;
 }
 
-.tf-auth__form input:focus {
-    outline: none;
-    border-color: var(--primary);
-}
-
-.tf-auth__submit {
-    margin-top: 18px;
-}
-
-.tf-auth__note {
-    font-size: 11.5px;
+.tf-auth-fineprint {
+    font-size: 12px;
     color: var(--text-light);
     margin-top: 16px;
-    text-align: center;
+    line-height: 1.5;
 }
+
+.tf-auth-fineprint a {
+    color: var(--info);
+    text-decoration: none;
+}
+
+.tf-auth-identity {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xs);
+    padding: 8px 10px;
+    margin-bottom: 16px;
+    font-size: 13.5px;
+}
+
+.tf-auth-identity a {
+    color: var(--info);
+    text-decoration: none;
+    font-size: 12.5px;
+}
+
+.tf-auth-divider {
+    width: 100%;
+    max-width: 350px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: var(--text-light);
+    font-size: 12px;
+    margin: 22px 0 14px;
+}
+
+.tf-auth-divider::before,
+.tf-auth-divider::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+}
+
+.tf-auth-divider span {
+    padding: 0 10px;
+}
+
+.tf-btn--createaccount {
+    width: 100%;
+    max-width: 350px;
+    background: white;
+    border: 1px solid #a6a6a6;
+    color: var(--text);
+    border-radius: var(--radius-xs);
+    padding: 9px;
+    font-size: 13.5px;
+}
+
+.tf-auth-footer {
+    margin-top: 40px;
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+.tf-auth-footer__links {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 10px;
+}
+
+.tf-auth-footer__links a {
+    color: var(--info);
+    text-decoration: none;
+    font-size: 12px;
+}
+
+.tf-auth-footer__copy {
+    font-size: 11px;
+    color: var(--text-light);
+   }
