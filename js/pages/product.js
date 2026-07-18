@@ -1,6 +1,6 @@
 /* ======================================================
    TOFO MARKET - PRODUCT DETAIL PAGE LOGIC
-   Version: 1.0
+   Version: 1.1 (missing closing bracket fixed)
 ====================================================== */
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -141,9 +141,11 @@ function renderProductDetail(product) {
     });
 
     const cartBtn = document.getElementById("addToCartBtn");
-if (cartBtn) {
-    cartBtn.addEventListener("click", function () {
-        ToFoCart.addItem(product, qty);
-        alert(`${qty} x ${product.name} cart mein add ho gaya!`);
-    });
-}
+    if (cartBtn) {
+        cartBtn.addEventListener("click", function () {
+            ToFoCart.addItem(product, qty);
+            alert(`${qty} x ${product.name} cart mein add ho gaya!`);
+        });
+    }
+
+                   }
