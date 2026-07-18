@@ -1,13 +1,6 @@
 /* ======================================================
    TOFO MARKET - HOME PAGE LOGIC
-   Version: 1.3
-
-   Handles:
-   - Product loading
-   - Product rendering (ratings removed from landing page)
-   - City filtering (drawer se connected)
-   - Seller information
-   - Future API connection ready
+   Version: 1.4 (View Product ab link hai)
 ====================================================== */
 
 let currentCity = "All";
@@ -55,8 +48,6 @@ function loadProducts() {
 }
 
 
-// ================= CITY FILTER =================
-
 function applyCityFilter(products) {
 
     if (currentCity === "All") {
@@ -70,7 +61,6 @@ function applyCityFilter(products) {
 }
 
 
-// Ye function drawer.js se call hoti hai jab user city select kare
 function filterByCity(city) {
 
     currentCity = city;
@@ -92,8 +82,6 @@ function filterByCity(city) {
 }
 
 
-// ================= RENDER PRODUCTS =================
-
 function renderProducts(products) {
 
     const grid = document.getElementById("product-grid");
@@ -114,37 +102,39 @@ function renderProducts(products) {
         const card = `
         <div class="tf-product-card">
 
-            <img 
-            src="${product.image}"
-            alt="${product.name}"
-            class="tf-product-card__image"
-            >
+            <a href="product.html?id=${product.id}" class="tf-product-card__link">
+                <img 
+                src="${product.image}"
+                alt="${product.name}"
+                class="tf-product-card__image"
+                >
 
-            <div class="tf-product-card__body">
+                <div class="tf-product-card__body">
 
-                <h3>${product.name}</h3>
+                    <h3>${product.name}</h3>
 
-                <p>${product.category}</p>
+                    <p>${product.category}</p>
 
-                <strong class="tf-price">
-                    ${product.price.toLocaleString()} ${product.currency}
-                </strong>
+                    <strong class="tf-price">
+                        ${product.price.toLocaleString()} ${product.currency}
+                    </strong>
 
-                <span class="tf-location">
-                    📍 ${product.location}
-                </span>
+                    <span class="tf-location">
+                        📍 ${product.location}
+                    </span>
 
-                <div class="tf-seller">
-                    ${product.seller.verified ? "✅" : ""}
-                    ${product.seller.name}
-                    <small>(${product.seller.rating}% Seller)</small>
+                    <div class="tf-seller">
+                        ${product.seller.verified ? "✅" : ""}
+                        ${product.seller.name}
+                        <small>(${product.seller.rating}% Seller)</small>
+                    </div>
+
                 </div>
+            </a>
 
-                <button class="tf-btn tf-btn--primary">
-                    View Product
-                </button>
-
-            </div>
+            <a href="product.html?id=${product.id}" class="tf-btn tf-btn--primary tf-product-card__cta">
+                View Product
+            </a>
 
         </div>
         `;
@@ -153,4 +143,4 @@ function renderProducts(products) {
 
     });
 
-}
+       }
