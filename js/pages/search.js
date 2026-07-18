@@ -91,45 +91,39 @@ function renderSearchResults(products) {
 
     products.forEach(function (product) {
 
-        const card = `
-        <div class="tf-product-card">
+       const card = `
+<a href="product.html?id=${product.id}" class="tf-product-card">
 
-            <a href="product.html?id=${product.id}" class="tf-product-card__link">
-                <img 
-                src="${product.image}"
-                alt="${product.name}"
-                class="tf-product-card__image"
-                >
+    <img 
+    src="${product.image}"
+    alt="${product.name}"
+    class="tf-product-card__image"
+    >
 
-                <div class="tf-product-card__body">
+    <div class="tf-product-card__body">
 
-                    <h3>${product.name}</h3>
+        <h3>${product.name}</h3>
 
-                    <p>${product.category}</p>
+        <p>${product.category}</p>
 
-                    <strong class="tf-price">
-                        ${product.price.toLocaleString()} ${product.currency}
-                    </strong>
+        <strong class="tf-price">
+            ${product.price.toLocaleString()} ${product.currency}
+        </strong>
 
-                    <span class="tf-location">
-                        📍 ${product.location}
-                    </span>
+        <span class="tf-location">
+            📍 ${product.location}
+        </span>
 
-                    <div class="tf-seller">
-                        ${product.seller.verified ? "✅" : ""}
-                        ${product.seller.name}
-                        <small>(${product.seller.rating}% Seller)</small>
-                    </div>
-
-                </div>
-            </a>
-
-            <a href="product.html?id=${product.id}" class="tf-btn tf-btn--primary tf-product-card__cta">
-                View Product
-            </a>
-
+        <div class="tf-seller">
+            ${product.seller.verified ? "✅" : ""}
+            ${product.seller.name}
+            <small>(${product.seller.rating}% Seller)</small>
         </div>
-        `;
+
+    </div>
+
+</a>
+`;
 
         grid.innerHTML += card;
 
