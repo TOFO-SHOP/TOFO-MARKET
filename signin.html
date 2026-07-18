@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign In — ToFo Market</title>
+
+    <link rel="stylesheet" href="css/theme.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body class="tf-auth-body">
+
+<div class="tf-auth-page">
+
+    <a href="index.html" class="tf-auth-logo">
+        <img src="assets/images/logo.svg" alt="ToFo Market">
+    </a>
+
+    <div class="tf-auth-card">
+
+        <!-- STEP 1: Email -->
+        <div id="stepEmail">
+            <h1>Sign in</h1>
+
+            <label for="emailInput">Email or mobile phone number</label>
+            <input type="text" id="emailInput" required>
+
+            <button type="button" class="tf-btn tf-btn--signin" id="continueBtn">Continue</button>
+
+            <p class="tf-auth-fineprint">
+                By continuing, you agree to ToFo Market's <a href="#">Conditions of Use</a> and <a href="#">Privacy Notice</a>.
+            </p>
+        </div>
+
+        <!-- STEP 2: Password (existing user) -->
+        <div id="stepPassword" style="display:none;">
+            <h1>Sign in</h1>
+
+            <div class="tf-auth-identity">
+                <span id="identityEmail"></span>
+                <a href="#" id="changeIdentity">Change</a>
+            </div>
+
+            <label for="passwordInput">Password</label>
+            <input type="password" id="passwordInput" required>
+
+            <button type="button" class="tf-btn tf-btn--signin" id="signInSubmit">Sign In</button>
+        </div>
+
+        <!-- STEP 3: New account details (new user) -->
+        <div id="stepNewAccount" style="display:none;">
+            <h1>Create account</h1>
+
+            <label for="nameInput">Your name</label>
+            <input type="text" id="nameInput" required>
+
+            <div class="tf-auth-identity">
+                <span id="identityEmail2"></span>
+                <a href="#" id="changeIdentity2">Change</a>
+            </div>
+
+            <label for="newPasswordInput">Password</label>
+            <input type="password" id="newPasswordInput" required minlength="6">
+            <p class="tf-auth-hint">Passwords must be at least 6 characters.</p>
+
+            <button type="button" class="tf-btn tf-btn--signin" id="createAccountBtn">Create your ToFo Market account</button>
+        </div>
+
+    </div>
+
+    <div class="tf-auth-divider">
+        <span>New to ToFo Market?</span>
+    </div>
+
+    <button type="button" class="tf-btn tf-btn--createaccount" id="showCreateBtn">Create your ToFo Market account</button>
+
+    <footer class="tf-auth-footer">
+        <div class="tf-auth-footer__links">
+            <a href="#">Conditions of Use</a>
+            <a href="#">Privacy Notice</a>
+            <a href="#">Help</a>
+        </div>
+        <div class="tf-auth-footer__copy">© 2026 ToFo Market, Inc. or its affiliates</div>
+    </footer>
+
+</div>
+
+<script src="js/components/cart.js"></script>
+<script src="js/components/auth.js"></script>
+<script src="js/pages/signin.js"></script>
+
+</body>
+                         </html>
