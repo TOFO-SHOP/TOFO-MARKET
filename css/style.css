@@ -1111,3 +1111,11 @@
     font-size: 11px;
     color: var(--text-light);
    }
+
+.tf-auth-back {
+    align-self: flex-start;
+    color: var(--text-light);
+    text-decoration: none;
+    font-size: 13px;
+    margin-bottom: 14px;
+}
