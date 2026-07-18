@@ -960,3 +960,9 @@
     width: 100%;
     margin-bottom: 24px;
 }
+
+/* ================= STATIC DELIVER BAR (non-clickable, for inner pages) ================= */
+
+.tf-deliver-bar--static {
+    cursor: default;
+}
