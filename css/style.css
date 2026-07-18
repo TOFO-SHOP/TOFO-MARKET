@@ -1,6 +1,6 @@
 /* ======================================================
    TOFO MARKET - MAIN STYLE (Amazon-style rebuild)
-   Version: 2.0
+   Version: 2.1 (cleaned, duplicates removed)
 ====================================================== */
 
 .tf-container {
@@ -76,7 +76,6 @@
     border-radius: 999px;
 }
 
-/* Search */
 .tf-search {
     display: flex;
     background: white;
@@ -102,7 +101,6 @@
     cursor: pointer;
 }
 
-/* Quicklinks row */
 .tf-quicklinks {
     display: flex;
     gap: 18px;
@@ -121,7 +119,6 @@
     flex-shrink: 0;
 }
 
-/* Deliver bar */
 .tf-deliver-bar {
     width: 100%;
     background: var(--secondary-light);
@@ -143,6 +140,10 @@
 .tf-deliver-bar__chevron {
     margin-left: auto;
     font-size: 14px;
+}
+
+.tf-deliver-bar--static {
+    cursor: default;
 }
 
 /* ================= DRAWER ================= */
@@ -322,7 +323,7 @@
     text-decoration: none;
 }
 
-/* ================= SHOP BY CATEGORY (image grid) ================= */
+/* ================= SHOP BY CATEGORY ================= */
 
 .tf-section--tight {
     padding: 24px 0 8px;
@@ -372,7 +373,7 @@
     text-decoration: none;
 }
 
-/* ================= PRODUCTS (COMPACT 2-COLUMN) ================= */
+/* ================= PRODUCTS ================= */
 
 .tf-section {
     padding: 24px 0;
@@ -390,9 +391,6 @@
 .tf-section__head h2 {
     flex: 1;
     min-width: 0;
-}
-
-.tf-section__head h2 {
     font-size: 19px;
     font-weight: 800;
 }
@@ -404,14 +402,8 @@
 
 .tf-grid {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 10px;
-    justify-content: start;
-}
-
-.tf-product-card {
-    max-width: 220px;
-    width: 100%;
 }
 
 .tf-product-card {
@@ -421,13 +413,16 @@
     box-shadow: var(--shadow-sm);
     display: flex;
     flex-direction: column;
+    text-decoration: none;
+    color: inherit;
 }
 
 .tf-product-card__image {
     width: 100%;
-    aspect-ratio: 1.15 / 1;
+    aspect-ratio: 1 / 1;
     object-fit: cover;
     display: block;
+    border-radius: var(--radius-sm);
 }
 
 .tf-product-card__body {
@@ -561,22 +556,6 @@
 .tf-error__icon {
     font-size: 28px;
     margin-bottom: 8px;
-}
-
-
-/* ================= PRODUCT CARD LINK (Home Page) ================= */
-
-.tf-product-card__link {
-    text-decoration: none;
-    color: inherit;
-    display: block;
-}
-
-.tf-product-card__cta {
-    display: block;
-    text-align: center;
-    text-decoration: none;
-    margin: 0 10px 10px;
 }
 
 /* ================= BACK BUTTON ================= */
@@ -729,9 +708,9 @@
     font-size: 13.5px;
     color: var(--text-light);
     margin-bottom: 6px;
-   }
+}
 
-/* ================= BASE BUTTONS (Missing — Re-added) ================= */
+/* ================= BASE BUTTONS ================= */
 
 .tf-btn {
     padding: 12px 25px;
@@ -760,7 +739,6 @@
     border: 2px solid var(--secondary);
     color: var(--secondary) !important;
 }
-
 
 /* ================= CART PAGE ================= */
 
@@ -846,7 +824,7 @@
 
 .tf-cart-summary__checkout {
     width: 100%;
-   }
+}
 
 /* ================= CHECKOUT PAGE ================= */
 
@@ -972,29 +950,4 @@
 .tf-checkout-place {
     width: 100%;
     margin-bottom: 24px;
-}
-
-/* ================= STATIC DELIVER BAR (non-clickable, for inner pages) ================= */
-
-.tf-deliver-bar--static {
-    cursor: default;
-}
-
-/* ================= PRODUCT CARD (Amazon-minimal, no button) ================= */
-
-.tf-product-card {
-    text-decoration: none;
-    color: inherit;
-    display: block;
-    box-shadow: none;
-    border: none;
-    background: transparent;
-}
-
-.tf-product-card__image {
-    border-radius: var(--radius-sm);
-}
-
-.tf-product-card__body {
-    padding: 8px 2px 0;
    }
