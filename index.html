@@ -6,122 +6,132 @@
     <title>ToFo Market — Your Local Marketplace</title>
     <meta name="description" content="ToFo Market is a trusted online marketplace where buyers and sellers connect easily." />
 
-    <!-- Theme & Design CSS -->
     <link rel="stylesheet" href="css/theme.css" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/responsive.css" />
 </head>
 <body>
 
-<!-- ================= HEADER (Amazon-style) ================= -->
+<!-- ================= HEADER ================= -->
 <header class="tf-header">
 
-    <!-- Row 1: Logo | Deliver-to | Search | Account/Cart -->
     <div class="tf-header__top">
-        <div class="tf-container tf-header__main">
+        <button class="tf-hamburger" id="menuToggle" aria-label="Menu">☰</button>
 
-            <!-- Logo -->
-            <a href="index.html" class="tf-logo">
-                <img src="assets/images/logo.svg" alt="ToFo Market Logo">
-            </a>
+        <a href="index.html" class="tf-logo">
+            <img src="assets/images/logo.svg" alt="ToFo Market Logo">
+        </a>
 
-            <!-- Deliver To (city selector) -->
-            <div class="tf-deliver">
-                <span class="tf-deliver__label">Deliver to</span>
-                <div class="tf-deliver__city" id="city-display">All Cities</div>
-            </div>
-
-            <!-- Search -->
-            <div class="tf-search">
-                <input type="text" placeholder="Search products, brands and more...">
-                <button aria-label="Search">🔍</button>
-            </div>
-
-            <!-- Actions -->
-            <div class="tf-header__actions">
-                <button class="tf-header__action">
-                    <span class="tf-header__action-label">Hello, Sign in</span>
-                    <span class="tf-header__action-main">👤 Account</span>
-                </button>
-                <button class="tf-header__action">
-                    <span class="tf-header__action-label">Returns</span>
-                    <span class="tf-header__action-main">📦 Orders</span>
-                </button>
-                <button class="tf-header__action tf-header__cart">
-                    🛒 <span class="tf-cart-count">0</span> Cart
-                </button>
-            </div>
-
+        <div class="tf-header__top-actions">
+            <button class="tf-signin-link">Sign in <span>›</span></button>
+            <button class="tf-cart-icon" aria-label="Cart">
+                🛒<span class="tf-cart-count">0</span>
+            </button>
         </div>
     </div>
 
-    <!-- Row 2: Categories (left) + Menu icon (right, flipped from Amazon) -->
-    <nav class="tf-category-bar">
-        <div class="tf-container tf-category-bar__row">
-            <div class="tf-category-bar__links">
-                <a href="#" data-city="All" class="tf-city-toggle-btn is-active">All Cities</a>
-                <a href="#" data-city="Karachi" class="tf-city-toggle-btn">Karachi</a>
-                <a href="#" data-city="Lahore" class="tf-city-toggle-btn">Lahore</a>
-                <span class="tf-category-bar__divider"></span>
-                <a href="#">Electronics</a>
-                <a href="#">Fashion</a>
-                <a href="#">Home</a>
-                <a href="#">Mobile</a>
-                <a href="#">Beauty</a>
-            </div>
-            <button class="tf-menu-toggle" aria-label="More categories">☰ More</button>
+    <div class="tf-container">
+        <div class="tf-search">
+            <input type="text" placeholder="Search ToFo Market">
+            <button aria-label="Search">🔍</button>
         </div>
+    </div>
+
+    <nav class="tf-quicklinks">
+        <a href="#">Deals</a>
+        <a href="#">New Arrivals</a>
+        <a href="#">Best Sellers</a>
+        <a href="#">Electronics</a>
+        <a href="#">Fashion</a>
+        <a href="#">More</a>
     </nav>
+
+    <button class="tf-deliver-bar" id="deliverBar">
+        📍 Deliver to <strong id="city-display">All Cities</strong>
+        <span class="tf-deliver-bar__chevron">⌄</span>
+    </button>
 
 </header>
 
 
-<!-- ================= HERO ================= -->
-<section class="tf-hero">
-    <div class="tf-container tf-hero__grid">
-        <div>
-            <div class="tf-hero__eyebrow">Trusted Marketplace</div>
-            <h1>Buy &amp; Sell Everything<em> Easily</em></h1>
-            <p>ToFo Market connects buyers and sellers with a simple, fast and trusted shopping experience.</p>
-            <div class="tf-hero__actions">
-                <button class="tf-btn tf-btn--primary">Start Shopping</button>
-                <button class="tf-btn tf-btn--ghost">Become Seller</button>
-            </div>
+<!-- ================= DRAWER (Hamburger Menu) ================= -->
+<div class="tf-overlay" id="drawerOverlay"></div>
+
+<aside class="tf-drawer" id="sideDrawer">
+    <div class="tf-drawer__top">
+        <span>Sign in ›</span>
+        <button id="drawerClose" aria-label="Close menu">✕</button>
+    </div>
+
+    <h2 class="tf-drawer__title">Browse ToFo</h2>
+
+    <a class="tf-drawer__link tf-drawer__link--home" href="index.html">🏠 ToFo Home</a>
+
+    <div class="tf-drawer__section">Deliver To</div>
+    <a class="tf-drawer__link tf-city-link" href="#" data-city="All">All Cities</a>
+    <a class="tf-drawer__link tf-city-link" href="#" data-city="Karachi">Karachi</a>
+    <a class="tf-drawer__link tf-city-link" href="#" data-city="Lahore">Lahore</a>
+
+    <div class="tf-drawer__section">Top Categories</div>
+    <a class="tf-drawer__link" href="#">Electronics</a>
+    <a class="tf-drawer__link" href="#">Fashion</a>
+    <a class="tf-drawer__link" href="#">Home</a>
+    <a class="tf-drawer__link" href="#">Mobile</a>
+    <a class="tf-drawer__link" href="#">Beauty</a>
+    <a class="tf-drawer__link tf-drawer__link--more" href="#">See all ⌄</a>
+</aside>
+
+
+<!-- ================= PROMO BANNERS (horizontal scroll) ================= -->
+<section class="tf-promo">
+    <div class="tf-promo__scroll">
+        <div class="tf-promo__card tf-promo__card--a">
+            <span class="tf-promo__eyebrow">Sirf Karachi &amp; Lahore</span>
+            <h2>Apne shehar se,<br>apne waqt par</h2>
+            <span class="tf-promo__cta">Kharidari Shuru Karein →</span>
         </div>
-        <div class="tf-postmark">
-            <div class="tf-postmark__inner">
-                <div class="code">TOFO</div>
-                <div class="label">Verified Marketplace</div>
-            </div>
+        <div class="tf-promo__card tf-promo__card--b">
+            <span class="tf-promo__eyebrow">Seller Ban Jayein</span>
+            <h2>Apna business<br>online le jayein</h2>
+            <span class="tf-promo__cta">Shuru Karein →</span>
         </div>
     </div>
 </section>
 
 
-<!-- ================= SHOP BY CATEGORY (Amazon-style tiles) ================= -->
-<section class="tf-section tf-section--tiles">
+<!-- ================= SIGN IN CTA ================= -->
+<section class="tf-signin-cta">
     <div class="tf-container">
-        <div class="tf-section__head">
-            <h2>Shop by Category</h2>
-        </div>
-        <div class="tf-tile-grid">
-            <a href="#" class="tf-tile">
+        <h3>Sign in for the best experience</h3>
+        <button class="tf-btn tf-btn--signin">Sign in securely</button>
+        <a href="#" class="tf-link">Create an account</a>
+    </div>
+</section>
+
+
+<!-- ================= SHOP BY CATEGORY ================= -->
+<section class="tf-section tf-section--tight">
+    <div class="tf-container">
+        <h2 class="tf-grid-heading">Shop by Category</h2>
+        <div class="tf-imggrid">
+            <a href="#" class="tf-imggrid__item">
                 <img src="assets/images/laptop.jpg" alt="Electronics">
                 <span>Electronics</span>
             </a>
-            <a href="#" class="tf-tile">
+            <a href="#" class="tf-imggrid__item">
                 <img src="assets/images/shirt.jpg" alt="Fashion">
                 <span>Fashion</span>
             </a>
-            <a href="#" class="tf-tile">
+            <a href="#" class="tf-imggrid__item">
                 <img src="assets/images/watch.jpg" alt="Accessories">
                 <span>Accessories</span>
             </a>
-            <a href="#" class="tf-tile">
+            <a href="#" class="tf-imggrid__item">
                 <img src="assets/images/headphones.jpg" alt="Audio">
                 <span>Audio</span>
             </a>
         </div>
+        <a href="#" class="tf-seemore">See more ›</a>
     </div>
 </section>
 
@@ -135,7 +145,7 @@
         </div>
 
         <div id="product-grid" class="tf-grid">
-            <!-- Products will load from API/Data -->
+            <!-- Products load here via JS -->
         </div>
     </div>
 </section>
@@ -143,9 +153,26 @@
 
 <!-- ================= FOOTER ================= -->
 <footer class="tf-footer">
-    <div class="tf-container tf-footer__row">
-        <div><strong>ToFo Market</strong> — Your trusted marketplace</div>
-        <div>© 2026 ToFo Market. All Rights Reserved.</div>
+    <div class="tf-container">
+
+        <div class="tf-footer__links">
+            <div>
+                <a href="#">ToFo Market</a>
+                <a href="#">Your Orders</a>
+                <a href="#">Your Account</a>
+            </div>
+            <div>
+                <a href="#">Sell on ToFo</a>
+                <a href="#">Become Seller</a>
+                <a href="#">Customer Service</a>
+            </div>
+        </div>
+
+        <div class="tf-footer__row">
+            <div><strong>ToFo Market</strong> — Your trusted marketplace</div>
+            <div>© 2026 ToFo Market. All Rights Reserved.</div>
+        </div>
+
     </div>
 </footer>
 
@@ -153,8 +180,9 @@
 <!-- ================= JAVASCRIPT ================= -->
 <script src="js/components/loading.js"></script>
 <script src="js/components/error.js"></script>
+<script src="js/components/drawer.js"></script>
 <script src="js/data/products.js"></script>
 <script src="js/pages/home.js"></script>
 
 </body>
-                    </html>
+                     </html>
