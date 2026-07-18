@@ -1,591 +1,445 @@
 /* ======================================================
    TOFO MARKET - MAIN STYLE
-   Version: 1.0
+   Version: 1.1 (Amazon-style layout)
 ====================================================== */
 
-
 /* Container */
-
 .tf-container {
-
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
     box-sizing: border-box;
-
 }
-
-
 
 /* ================= HEADER ================= */
 
-
 .tf-header {
-
     background: var(--secondary);
     color: var(--text-white);
-    padding: 18px 0;
-
 }
 
+/* Top row wrapper */
+.tf-header__top {
+    padding: 14px 0;
+}
 
-.tf-header__bar {
-
+.tf-header__main {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 20px;
-
+    flex-wrap: wrap;
 }
 
-
-
 /* Logo */
-
 .tf-logo {
-
     font-size: 28px;
     font-weight: 800;
     color: white;
-
-}
-
-
-.tf-logo__dot {
-
-    display: inline-block;
-    width: 10px;
-    height: 10px;
-    background: var(--primary);
-    border-radius: 50%;
-    margin-left: 5px;
-
-}
-
-
-
-.tf-header__tagline {
-
-    color: #ddd;
-    font-size: var(--font-sm);
-
-}
-
-
-
-/* City Buttons */
-
-
-.tf-city-toggle {
-
     display: flex;
-    gap: 8px;
-
+    align-items: center;
+    flex-shrink: 0;
 }
 
+.tf-logo img {
+    width: 130px;
+    height: auto;
+    display: block;
+}
 
-
-.tf-city-toggle button {
-
-    padding: 8px 14px;
-    border: none;
-    border-radius: var(--radius-md);
+/* Deliver-to city pill */
+.tf-deliver {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+    color: white;
     cursor: pointer;
-    background: white;
-    color: var(--secondary);
-    font-weight: 600;
-
+    flex-shrink: 0;
 }
 
+.tf-deliver__label {
+    font-size: 11px;
+    color: #cfd3da;
+}
 
+.tf-deliver__city {
+    font-size: var(--font-sm);
+    font-weight: 700;
+}
 
-.tf-city-toggle .is-active {
+/* Search Bar */
+.tf-search {
+    flex: 1;
+    min-width: 200px;
+    max-width: 600px;
+    display: flex;
+    background: white;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+}
 
+.tf-search input {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 12px 16px;
+    font-size: 15px;
+}
+
+.tf-search button {
+    width: 50px;
+    border: none;
     background: var(--primary);
     color: white;
-
+    cursor: pointer;
+    font-size: 18px;
 }
 
+/* Header Action Buttons (Account / Orders / Cart) */
+.tf-header__actions {
+    display: flex;
+    gap: 8px;
+    flex-shrink: 0;
+}
 
+.tf-header__action {
+    background: transparent;
+    color: white;
+    border: 1px solid rgba(255,255,255,0.25);
+    padding: 8px 12px;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    line-height: 1.25;
+    transition: var(--transition);
+}
+
+.tf-header__action:hover {
+    border-color: rgba(255,255,255,0.6);
+}
+
+.tf-header__action-label {
+    font-size: 10.5px;
+    color: #cfd3da;
+}
+
+.tf-header__action-main {
+    font-size: 13.5px;
+    font-weight: 700;
+}
+
+.tf-header__cart {
+    flex-direction: row;
+    align-items: center;
+    gap: 6px;
+    font-weight: 700;
+}
+
+.tf-cart-count {
+    background: var(--primary);
+    color: white;
+    font-size: 11px;
+    font-weight: 800;
+    padding: 1px 6px;
+    border-radius: 999px;
+}
+
+/* Category Bar (row 2) */
+.tf-category-bar {
+    background: white;
+    border-bottom: 1px solid #eee;
+}
+
+.tf-category-bar__row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 10px 20px;
+    flex-wrap: wrap;
+}
+
+.tf-category-bar__links {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    flex-wrap: wrap;
+}
+
+.tf-category-bar a {
+    text-decoration: none;
+    color: var(--secondary);
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.tf-category-bar a:hover {
+    color: var(--primary);
+}
+
+.tf-category-bar__divider {
+    width: 1px;
+    height: 18px;
+    background: #ddd;
+}
+
+/* City toggle buttons (reuses category bar link look, but interactive) */
+.tf-city-toggle-btn {
+    padding: 5px 12px;
+    border-radius: var(--radius-md);
+    background: #f2f2f2;
+}
+
+.tf-city-toggle-btn.is-active {
+    background: var(--primary);
+    color: white !important;
+}
+
+/* Menu toggle (right side, per your flip request) */
+.tf-menu-toggle {
+    background: transparent;
+    border: none;
+    font-weight: 700;
+    color: var(--secondary);
+    cursor: pointer;
+    font-size: 14px;
+    flex-shrink: 0;
+}
 
 /* ================= HERO ================= */
 
-
 .tf-hero {
-
     padding: 60px 0;
     background: var(--bg);
-
 }
 
-
-
 .tf-hero__grid {
-
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
     gap: 40px;
-
 }
 
-
-
 .tf-hero__eyebrow {
-
     color: var(--primary);
     font-weight: 700;
     margin-bottom: 15px;
-
 }
 
-
-
 .tf-hero h1 {
-
     font-size: var(--font-xxl);
     line-height: 1.2;
     margin-bottom: 20px;
-
 }
-
-
 
 .tf-hero h1 em {
-
     color: var(--primary);
     font-style: normal;
-
 }
-
-
 
 .tf-hero p {
-
     color: var(--text-light);
     margin-bottom: 30px;
-
 }
-
-
 
 .tf-hero__actions {
-
     display: flex;
     gap: 15px;
-
 }
 
-
-
 /* Buttons */
-
-
 .tf-btn {
-
     padding: 12px 25px;
     border-radius: var(--radius-md);
     border: none;
     cursor: pointer;
     font-weight: 700;
     transition: var(--transition);
-
 }
-
-
 
 .tf-btn--primary {
-
     background: var(--primary);
     color: white;
-
 }
-
-
 
 .tf-btn--primary:hover {
-
     background: var(--primary-hover);
-
 }
 
-
-
 .tf-btn--ghost {
-
     background: transparent;
     border: 2px solid var(--secondary);
     color: var(--secondary);
-
 }
 
-
-
 /* Hero Badge */
-
-
 .tf-postmark {
-
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
 
-
-
 .tf-postmark__inner {
-
     width: 260px;
     height: 260px;
     border-radius: 50%;
     background: var(--secondary);
     color: white;
-
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
-
-
 
 .tf-postmark .code {
-
     font-size: 40px;
     font-weight: 800;
-
 }
-
-
 
 .tf-postmark .label {
-
-    margin-top:10px;
-
+    margin-top: 10px;
 }
 
+/* ================= SHOP BY CATEGORY (Tiles) ================= */
 
+.tf-section--tiles {
+    padding-bottom: 10px;
+}
+
+.tf-tile-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+}
+
+.tf-tile {
+    background: var(--surface);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    text-decoration: none;
+    color: var(--secondary);
+    text-align: center;
+    transition: var(--transition);
+    display: block;
+}
+
+.tf-tile:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+}
+
+.tf-tile img {
+    width: 100%;
+    height: 130px;
+    object-fit: cover;
+}
+
+.tf-tile span {
+    display: block;
+    padding: 12px;
+    font-weight: 700;
+    font-size: 14px;
+}
 
 /* ================= PRODUCTS ================= */
 
-
 .tf-section {
-
     padding: 50px 0;
-
 }
-
-
 
 .tf-section__head {
-
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    margin-bottom:25px;
-
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
 }
-
-
 
 .tf-section__head h2 {
-
     font-size: var(--font-xl);
-
 }
-
-
 
 .tf-grid {
-
-    display:grid;
-
-    grid-template-columns:
-    repeat(auto-fit,minmax(220px,1fr));
-
-    gap:25px;
-
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
 }
-
-
 
 /* Product Card */
-
-
 .tf-product-card {
-
     background: var(--surface);
-
     border-radius: var(--radius-lg);
-
-    overflow:hidden;
-
+    overflow: hidden;
     box-shadow: var(--shadow-sm);
-
     transition: var(--transition);
-
 }
-
-
 
 .tf-product-card:hover {
-
-    transform:translateY(-5px);
-
-    box-shadow:var(--shadow-md);
-
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
 }
-
-
 
 .tf-product-card__image {
-
-    width:100%;
-    height:220px;
-    object-fit:cover;
-
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
 }
-
-
 
 .tf-product-card__body {
-
-    padding:20px;
-
+    padding: 20px;
 }
-
-
 
 .tf-product-card__body h3 {
-
-    margin-bottom:10px;
-
+    margin-bottom: 10px;
 }
-
-
 
 .tf-product-card__body strong {
-
-    display:block;
-
-    color:var(--primary);
-
-    font-size:20px;
-
-    margin:10px 0;
-
+    display: block;
+    color: var(--primary);
+    font-size: 20px;
+    margin: 10px 0;
 }
-
-
 
 /* ================= FOOTER ================= */
 
-
 .tf-footer {
-
-    background:var(--secondary);
-
-    color:white;
-
-    padding:30px 0;
-
-    margin-top:50px;
-
+    background: var(--secondary);
+    color: white;
+    padding: 30px 0;
+    margin-top: 50px;
 }
-
-
 
 .tf-footer__row {
-
-    display:flex;
-
-    justify-content:space-between;
-
-    gap:20px;
-
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
 }
-
-
 
 /* ================= LOADING & ERROR ================= */
 
-
 .tf-loading,
 .tf-error {
-
-    text-align:center;
-
-    padding:40px;
-
+    text-align: center;
+    padding: 40px;
+    grid-column: 1 / -1;
 }
-
-
 
 .tf-loading__spinner {
-
-    width:40px;
-    height:40px;
-
-    border:4px solid #ddd;
-    border-top-color:var(--primary);
-
-    border-radius:50%;
-
-    margin:auto;
-
-    animation:spin 1s linear infinite;
-
+    width: 40px;
+    height: 40px;
+    border: 4px solid #ddd;
+    border-top-color: var(--primary);
+    border-radius: 50%;
+    margin: auto;
+    animation: spin 1s linear infinite;
 }
-
-
 
 @keyframes spin {
-
     to {
-
-        transform:rotate(360deg);
-
+        transform: rotate(360deg);
     }
-
-   }
-
-/* ======================================================
-   TOFO MARKET - HEADER UPDATE
-====================================================== */
-
-
-/* Main Header */
-
-.tf-header {
-    background: var(--secondary);
-    color: white;
 }
-
-
-
-/* Header Main Row */
-
-.tf-header__main {
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 20px;
-    padding: 15px 0;
-
-}
-
-
-
-/* Logo Image */
-
-.tf-logo img {
-
-    width: 150px;
-    height: auto;
-    display: block;
-
-}
-
-
-
-/* Search Bar */
-
-.tf-search {
-
-    flex: 1;
-    max-width: 600px;
-    display: flex;
-    background: white;
-    border-radius: var(--radius-md);
-    overflow: hidden;
-
-}
-
-
-
-.tf-search input {
-
-    flex: 1;
-    border: none;
-    outline: none;
-    padding: 14px 18px;
-    font-size: 15px;
-
-}
-
-
-
-.tf-search button {
-
-    width: 55px;
-    border: none;
-    background: var(--primary);
-    color: white;
-    cursor: pointer;
-    font-size: 18px;
-
-}
-
-
-
-
-/* Header Buttons */
-
-.tf-header__actions {
-
-    display: flex;
-    gap: 10px;
-
-}
-
-
-
-.tf-header__actions button {
-
-    background: transparent;
-    color: white;
-    border: 1px solid rgba(255,255,255,0.3);
-    padding: 10px 14px;
-    border-radius: var(--radius-md);
-    cursor: pointer;
-
-}
-
-
-
-
-/* Category Bar */
-
-.tf-category-bar {
-
-    background: white;
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    padding: 12px;
-    border-bottom: 1px solid #eee;
-
-}
-
-
-
-.tf-category-bar a {
-
-    text-decoration: none;
-    color: var(--secondary);
-    font-weight: 600;
-    font-size: 14px;
-
-}
-
-
-
-.tf-category-bar a:hover {
-
-    color: var(--primary);
-
-       }
