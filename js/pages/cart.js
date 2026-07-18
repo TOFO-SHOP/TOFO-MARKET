@@ -54,7 +54,7 @@ function renderCart() {
                 <span>Total (${ToFoCart.getTotalCount()} items)</span>
                 <strong>${ToFoCart.getTotalPrice().toLocaleString()} PKR</strong>
             </div>
-            <button class="tf-btn tf-btn--primary tf-cart-summary__checkout">Proceed to Checkout</button>
+            <a href="checkout.html" class="tf-btn tf-btn--primary tf-cart-summary__checkout">Proceed to Checkout</a>
         </div>
     `;
 
