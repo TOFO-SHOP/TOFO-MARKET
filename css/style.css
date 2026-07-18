@@ -966,3 +966,22 @@
 .tf-deliver-bar--static {
     cursor: default;
 }
+
+/* ================= PRODUCT CARD (Amazon-minimal, no button) ================= */
+
+.tf-product-card {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    box-shadow: none;
+    border: none;
+    background: transparent;
+}
+
+.tf-product-card__image {
+    border-radius: var(--radius-sm);
+}
+
+.tf-product-card__body {
+    padding: 8px 2px 0;
+   }
