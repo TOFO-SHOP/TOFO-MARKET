@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your Cart — ToFo Market</title>
+
+    <link rel="stylesheet" href="css/theme.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+
+<header class="tf-header">
+    <div class="tf-header__top">
+        <a href="index.html" class="tf-back-btn" aria-label="Back to home">←</a>
+        <a href="index.html" class="tf-logo">
+            <img src="assets/images/logo.svg" alt="ToFo Market Logo">
+        </a>
+        <div class="tf-header__top-actions">
+            <button class="tf-cart-icon" aria-label="Cart">
+                🛒<span class="tf-cart-count">0</span>
+            </button>
+        </div>
+    </div>
+</header>
+
+<main class="tf-container">
+    <h1 class="tf-cart__title">Your Cart</h1>
+    <div id="cart-content">
+        <!-- JS yahan cart items ya "empty cart" dikhayega -->
+    </div>
+</main>
+
+<footer class="tf-footer">
+    <div class="tf-container tf-footer__row">
+        <div><strong>ToFo Market</strong> — Your trusted marketplace</div>
+        <div>© 2026 ToFo Market. All Rights Reserved.</div>
+    </div>
+</footer>
+
+<script src="js/components/loading.js"></script>
+<script src="js/components/error.js"></script>
+<script src="js/components/cart.js"></script>
+<script src="js/pages/cart.js"></script>
+
+</body>
+  </html>
