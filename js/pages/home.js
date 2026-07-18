@@ -1,12 +1,25 @@
 /* ======================================================
    TOFO MARKET - HOME PAGE LOGIC
-   Version: 1.4 (View Product ab link hai)
+   Version: 1.5 (search bar ab search.html pe le jati hai)
 ====================================================== */
 
 let currentCity = "All";
 
 document.addEventListener("DOMContentLoaded", function () {
+
     loadProducts();
+
+    const searchForm = document.getElementById("searchForm");
+    if (searchForm) {
+        searchForm.addEventListener("submit", function (e) {
+            e.preventDefault();
+            const query = document.getElementById("searchInput").value.trim();
+            if (query) {
+                window.location.href = "search.html?q=" + encodeURIComponent(query);
+            }
+        });
+    }
+
 });
 
 
@@ -143,4 +156,4 @@ function renderProducts(products) {
 
     });
 
-       }
+                                    }
