@@ -951,3 +951,45 @@
     width: 100%;
     margin-bottom: 24px;
    }
+
+/* --------------------------
+   Option A — 3-column compact grid on small screens
+   -------------------------- */
+@media (max-width: 480px) {
+  .tf-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+  }
+
+  .tf-product-card {
+    border-radius: 8px;
+    padding: 0;
+    box-shadow: none;
+  }
+
+  .tf-product-card__image {
+    aspect-ratio: 1 / 0.75;
+    max-height: 110px;
+    border-radius: 6px;
+  }
+
+  .tf-product-card__body {
+    padding: 6px 6px;
+    gap: 4px;
+  }
+
+  .tf-product-card__body h3 {
+    font-size: 11px;
+    line-height: 1.2;
+    min-height: 32px;
+  }
+
+  .tf-price {
+    font-size: 13px;
+  }
+
+  .tf-btn {
+    padding: 6px 8px;
+    font-size: 12px;
+  }
+}
