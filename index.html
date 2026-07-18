@@ -1,344 +1,160 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-
 <head>
-
     <meta charset="UTF-8" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <title>
-        ToFo Market — Your Local Marketplace
-    </title>
-
-
-    <meta name="description"
-    content="ToFo Market is a trusted online marketplace where buyers and sellers connect easily." />
-
+    <title>ToFo Market — Your Local Marketplace</title>
+    <meta name="description" content="ToFo Market is a trusted online marketplace where buyers and sellers connect easily." />
 
     <!-- Theme & Design CSS -->
-
     <link rel="stylesheet" href="css/theme.css" />
-
     <link rel="stylesheet" href="css/style.css" />
-
     <link rel="stylesheet" href="css/responsive.css" />
-
-
 </head>
-
-
 <body>
 
-
-<!-- ================= HEADER ================= -->
-
+<!-- ================= HEADER (Amazon-style) ================= -->
 <header class="tf-header">
 
-    <div class="tf-container tf-header__main">
+    <!-- Row 1: Logo | Deliver-to | Search | Account/Cart -->
+    <div class="tf-header__top">
+        <div class="tf-container tf-header__main">
 
+            <!-- Logo -->
+            <a href="index.html" class="tf-logo">
+                <img src="assets/images/logo.svg" alt="ToFo Market Logo">
+            </a>
 
-        <!-- Logo -->
+            <!-- Deliver To (city selector) -->
+            <div class="tf-deliver">
+                <span class="tf-deliver__label">Deliver to</span>
+                <div class="tf-deliver__city" id="city-display">All Cities</div>
+            </div>
 
-        <div class="tf-logo">
+            <!-- Search -->
+            <div class="tf-search">
+                <input type="text" placeholder="Search products, brands and more...">
+                <button aria-label="Search">🔍</button>
+            </div>
 
-            <img src="assets/images/logo.svg" 
-            alt="ToFo Market Logo">
-
-        </div>
-
-
-
-        <!-- Search -->
-
-        <div class="tf-search">
-
-            <input 
-            type="text"
-            placeholder="Search products...">
-
-            <button>
-                🔍
-            </button>
-
-        </div>
-
-
-
-        <!-- Actions -->
-
-        <div class="tf-header__actions">
-
-
-            <button>
-                👤 Account
-            </button>
-
-
-            <button>
-                🛒 Cart
-            </button>
-
+            <!-- Actions -->
+            <div class="tf-header__actions">
+                <button class="tf-header__action">
+                    <span class="tf-header__action-label">Hello, Sign in</span>
+                    <span class="tf-header__action-main">👤 Account</span>
+                </button>
+                <button class="tf-header__action">
+                    <span class="tf-header__action-label">Returns</span>
+                    <span class="tf-header__action-main">📦 Orders</span>
+                </button>
+                <button class="tf-header__action tf-header__cart">
+                    🛒 <span class="tf-cart-count">0</span> Cart
+                </button>
+            </div>
 
         </div>
-
-
     </div>
 
-
-
-
-    <!-- Categories -->
-
+    <!-- Row 2: Categories (left) + Menu icon (right, flipped from Amazon) -->
     <nav class="tf-category-bar">
-
-
-        <a href="#">
-            Electronics
-        </a>
-
-
-        <a href="#">
-            Fashion
-        </a>
-
-
-        <a href="#">
-            Home
-        </a>
-
-
-        <a href="#">
-            Mobile
-        </a>
-
-
-        <a href="#">
-            Beauty
-        </a>
-
-
-        <a href="#">
-            More
-        </a>
-
-
+        <div class="tf-container tf-category-bar__row">
+            <div class="tf-category-bar__links">
+                <a href="#" data-city="All" class="tf-city-toggle-btn is-active">All Cities</a>
+                <a href="#" data-city="Karachi" class="tf-city-toggle-btn">Karachi</a>
+                <a href="#" data-city="Lahore" class="tf-city-toggle-btn">Lahore</a>
+                <span class="tf-category-bar__divider"></span>
+                <a href="#">Electronics</a>
+                <a href="#">Fashion</a>
+                <a href="#">Home</a>
+                <a href="#">Mobile</a>
+                <a href="#">Beauty</a>
+            </div>
+            <button class="tf-menu-toggle" aria-label="More categories">☰ More</button>
+        </div>
     </nav>
-
 
 </header>
 
 
-
-
-
 <!-- ================= HERO ================= -->
-
-
 <section class="tf-hero">
-
-
-<div class="tf-container tf-hero__grid">
-
-
-<div>
-
-
-<div class="tf-hero__eyebrow">
-
-    Trusted Marketplace
-
-</div>
-
-
-
-<h1>
-
-    Buy & Sell Everything
-    <em> Easily</em>
-
-</h1>
-
-
-
-<p>
-
-    ToFo Market connects buyers and sellers
-    with a simple, fast and trusted shopping experience.
-
-</p>
-
-
-
-
-<div class="tf-hero__actions">
-
-
-<button class="tf-btn tf-btn--primary">
-
-    Start Shopping
-
-</button>
-
-
-
-<button class="tf-btn tf-btn--ghost">
-
-    Become Seller
-
-</button>
-
-
-</div>
-
-
-</div>
-
-
-
-<div class="tf-postmark">
-
-<div class="tf-postmark__inner">
-
-
-<div class="code">
-
-    TOFO
-
-</div>
-
-
-<div class="label">
-
-    Verified Marketplace
-
-</div>
-
-
-</div>
-
-</div>
-
-
-
-</div>
-
-
+    <div class="tf-container tf-hero__grid">
+        <div>
+            <div class="tf-hero__eyebrow">Trusted Marketplace</div>
+            <h1>Buy &amp; Sell Everything<em> Easily</em></h1>
+            <p>ToFo Market connects buyers and sellers with a simple, fast and trusted shopping experience.</p>
+            <div class="tf-hero__actions">
+                <button class="tf-btn tf-btn--primary">Start Shopping</button>
+                <button class="tf-btn tf-btn--ghost">Become Seller</button>
+            </div>
+        </div>
+        <div class="tf-postmark">
+            <div class="tf-postmark__inner">
+                <div class="code">TOFO</div>
+                <div class="label">Verified Marketplace</div>
+            </div>
+        </div>
+    </div>
 </section>
 
 
-
-
-
+<!-- ================= SHOP BY CATEGORY (Amazon-style tiles) ================= -->
+<section class="tf-section tf-section--tiles">
+    <div class="tf-container">
+        <div class="tf-section__head">
+            <h2>Shop by Category</h2>
+        </div>
+        <div class="tf-tile-grid">
+            <a href="#" class="tf-tile">
+                <img src="assets/images/laptop.jpg" alt="Electronics">
+                <span>Electronics</span>
+            </a>
+            <a href="#" class="tf-tile">
+                <img src="assets/images/shirt.jpg" alt="Fashion">
+                <span>Fashion</span>
+            </a>
+            <a href="#" class="tf-tile">
+                <img src="assets/images/watch.jpg" alt="Accessories">
+                <span>Accessories</span>
+            </a>
+            <a href="#" class="tf-tile">
+                <img src="assets/images/headphones.jpg" alt="Audio">
+                <span>Audio</span>
+            </a>
+        </div>
+    </div>
+</section>
 
 
 <!-- ================= PRODUCTS ================= -->
-
-
 <section class="tf-section">
+    <div class="tf-container">
+        <div class="tf-section__head">
+            <h2>Latest Products</h2>
+            <span id="product-count">Loading...</span>
+        </div>
 
-
-<div class="tf-container">
-
-
-<div class="tf-section__head">
-
-
-<h2>
-
-    Latest Products
-
-</h2>
-
-
-<span id="product-count">
-
-    Loading...
-
-</span>
-
-
-</div>
-
-
-
-
-<div id="product-grid" class="tf-grid">
-
-
-<!-- Products will load from API/Data -->
-
-</div>
-
-
-
-</div>
-
-
+        <div id="product-grid" class="tf-grid">
+            <!-- Products will load from API/Data -->
+        </div>
+    </div>
 </section>
 
 
-
-
-
-
-
 <!-- ================= FOOTER ================= -->
-
-
 <footer class="tf-footer">
-
-
-<div class="tf-container tf-footer__row">
-
-
-<div>
-
-<strong>
-
-ToFo Market
-
-</strong>
-
-— Your trusted marketplace
-
-</div>
-
-
-
-<div>
-
-© 2026 ToFo Market. All Rights Reserved.
-
-</div>
-
-
-
-</div>
-
-
+    <div class="tf-container tf-footer__row">
+        <div><strong>ToFo Market</strong> — Your trusted marketplace</div>
+        <div>© 2026 ToFo Market. All Rights Reserved.</div>
+    </div>
 </footer>
 
 
-
-
-
-
-
-
 <!-- ================= JAVASCRIPT ================= -->
-
-
 <script src="js/components/loading.js"></script>
-
 <script src="js/components/error.js"></script>
-
 <script src="js/data/products.js"></script>
-
 <script src="js/pages/home.js"></script>
 
-
-
 </body>
-
-  </html>
+                    </html>
