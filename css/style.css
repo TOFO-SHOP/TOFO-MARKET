@@ -404,8 +404,14 @@
 
 .tf-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 10px;
+    justify-content: start;
+}
+
+.tf-product-card {
+    max-width: 220px;
+    width: 100%;
 }
 
 .tf-product-card {
@@ -419,7 +425,7 @@
 
 .tf-product-card__image {
     width: 100%;
-    aspect-ratio: 1 / 1;
+    aspect-ratio: 1.15 / 1;
     object-fit: cover;
     display: block;
 }
