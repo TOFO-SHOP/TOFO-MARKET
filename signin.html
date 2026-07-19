@@ -66,12 +66,47 @@
             <input type="password" id="newPasswordInput" required minlength="6">
             <p class="tf-auth-hint">Passwords must be at least 6 characters.</p>
 
-            <button type="button" class="tf-btn tf-btn--signin" id="createAccountBtn">Create your ToFo Market account</button>
+            <button type="button" class="tf-btn tf-btn--signin" id="createAccountBtn">Verify Mobile Number</button>
+        </div>
+
+        <!-- STEP 4: OTP Verification -->
+        <div id="stepOtp" style="display:none;">
+            <h1>Verify your number</h1>
+
+            <p class="tf-auth-otp-note">
+                Hum ne ek 4-digit code bheja hai <strong id="otpTargetEmail"></strong> par.
+                <span id="otpDemoHint"></span>
+            </p>
+
+            <label for="otpInput">Enter OTP</label>
+            <input type="text" id="otpInput" maxlength="4" inputmode="numeric" placeholder="0000" required>
+
+            <button type="button" class="tf-btn tf-btn--signin" id="verifyOtpBtn">Verify &amp; Continue</button>
+            <button type="button" class="tf-btn tf-btn--ghost tf-auth-resend" id="resendOtpBtn">Resend Code</button>
+        </div>
+
+        <!-- STEP 5: Buyer or Seller -->
+        <div id="stepRole" style="display:none;">
+            <h1>Aap ToFo Market kaise use karenge?</h1>
+
+            <div class="tf-role-options">
+                <button type="button" class="tf-role-card" id="chooseBuyer">
+                    <span class="tf-role-card__icon">🛍️</span>
+                    <span class="tf-role-card__title">Buyer</span>
+                    <span class="tf-role-card__desc">Products browse aur kharidein</span>
+                </button>
+
+                <button type="button" class="tf-role-card" id="chooseSeller">
+                    <span class="tf-role-card__icon">🏪</span>
+                    <span class="tf-role-card__title">Seller</span>
+                    <span class="tf-role-card__desc">Apni dukaan online le jayein</span>
+                </button>
+            </div>
         </div>
 
     </div>
 
-    <div class="tf-auth-divider">
+    <div class="tf-auth-divider" id="createAccountDivider">
         <span>New to ToFo Market?</span>
     </div>
 
