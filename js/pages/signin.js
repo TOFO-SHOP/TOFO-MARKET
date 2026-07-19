@@ -1,6 +1,6 @@
 /* ======================================================
    TOFO MARKET - SIGN IN PAGE LOGIC (Amazon-style flow)
-   Version: 2.0
+   Version: 2.1 (Create Account button ab direct kaam karta hai)
 ====================================================== */
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -15,46 +15,42 @@ document.addEventListener("DOMContentLoaded", function () {
     const identityEmail = document.getElementById("identityEmail");
     const identityEmail2 = document.getElementById("identityEmail2");
 
-    // Dummy check: agar email mein "new" ho to naya user samjho, warna existing
-    // (Real backend aane pe: yahan API check hoga ke email exist karti hai ya nahi)
+    let forceSignUp = false;
+
+    function showStep(step) {
+        stepEmail.style.display = step === "email" ? "block" : "none";
+        stepPassword.style.display = step === "password" ? "block" : "none";
+        stepNewAccount.style.display = step === "newAccount" ? "block" : "none";
+    }
+
     continueBtn.addEventListener("click", function () {
 
         const email = emailInput.value.trim();
         if (!email) return;
 
-        const isExistingUser = !email.toLowerCase().includes("new");
-
         identityEmail.textContent = email;
         identityEmail2.textContent = email;
 
-        stepEmail.style.display = "none";
+        // Agar user "Create Account" button se aaya hai, seedha sign-up form
+        // Warna dummy detection: agar email mein "new" ho to naya user samjho
+        const isNewUser = forceSignUp || email.toLowerCase().includes("new");
 
-        if (isExistingUser) {
-            stepPassword.style.display = "block";
-        } else {
-            stepNewAccount.style.display = "block";
-        }
+        showStep(isNewUser ? "newAccount" : "password");
 
     });
 
-    // Change link — wapas email step pe
-    function backToEmail() {
-        stepPassword.style.display = "none";
-        stepNewAccount.style.display = "none";
-        stepEmail.style.display = "block";
-    }
-
     document.getElementById("changeIdentity").addEventListener("click", function (e) {
         e.preventDefault();
-        backToEmail();
+        forceSignUp = false;
+        showStep("email");
     });
 
     document.getElementById("changeIdentity2").addEventListener("click", function (e) {
         e.preventDefault();
-        backToEmail();
+        forceSignUp = false;
+        showStep("email");
     });
 
-    // Sign in submit
     document.getElementById("signInSubmit").addEventListener("click", function () {
         const password = document.getElementById("passwordInput").value;
         if (!password) return;
@@ -63,7 +59,6 @@ document.addEventListener("DOMContentLoaded", function () {
         window.location.href = "index.html";
     });
 
-    // Create account submit
     document.getElementById("createAccountBtn").addEventListener("click", function () {
         const name = document.getElementById("nameInput").value.trim();
         const password = document.getElementById("newPasswordInput").value;
@@ -73,13 +68,13 @@ document.addEventListener("DOMContentLoaded", function () {
         window.location.href = "index.html";
     });
 
-    // "Create your ToFo Market account" button at bottom
+    // "Create your ToFo Market account" button (neeche wala)
     document.getElementById("showCreateBtn").addEventListener("click", function () {
+        forceSignUp = true;
         emailInput.value = "";
-        stepEmail.style.display = "block";
-        stepPassword.style.display = "none";
-        stepNewAccount.style.display = "none";
+        showStep("email");
         emailInput.focus();
+        emailInput.scrollIntoView({ behavior: "smooth", block: "center" });
     });
 
 });
