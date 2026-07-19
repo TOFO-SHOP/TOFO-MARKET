@@ -1,10 +1,6 @@
 /* ======================================================
    TOFO MARKET - AUTH LOGIC (Shared across all pages)
-   Version: 1.0
-   Abhi localStorage use ho raha hai (dummy).
-   Baad mein isi file ke andar real backend (Firebase)
-   se connect hoga — baaki pages mein kuch change
-   nahi karna padega.
+   Version: 2.0 (role: buyer/seller add kiya)
 ====================================================== */
 
 const ToFoAuth = {
@@ -20,30 +16,39 @@ const ToFoAuth = {
         return this.getCurrentUser() !== null;
     },
 
+    saveUser: function (user) {
+        localStorage.setItem(this.STORAGE_KEY, JSON.stringify(user));
+        this.updateHeaderUI();
+    },
+
     signUp: function (name, email, password) {
-        // Real backend aane pe: yahan API call hogi
         const user = {
             name: name,
             email: email,
-            role: "buyer",
+            role: null,   // role baad mein set hoga (buyer/seller choose karne pe)
             joinedAt: new Date().toISOString()
         };
-        localStorage.setItem(this.STORAGE_KEY, JSON.stringify(user));
-        this.updateHeaderUI();
+        this.saveUser(user);
         return user;
     },
 
     signIn: function (email, password) {
-        // Real backend aane pe: yahan email/password verify hoga
-        const user = {
+        const existing = this.getCurrentUser();
+        const user = (existing && existing.email === email) ? existing : {
             name: email.split("@")[0],
             email: email,
             role: "buyer",
             joinedAt: new Date().toISOString()
         };
-        localStorage.setItem(this.STORAGE_KEY, JSON.stringify(user));
-        this.updateHeaderUI();
+        this.saveUser(user);
         return user;
+    },
+
+    setRole: function (role) {
+        const user = this.getCurrentUser();
+        if (!user) return;
+        user.role = role;
+        this.saveUser(user);
     },
 
     signOut: function () {
